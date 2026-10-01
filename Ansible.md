@@ -2,6 +2,14 @@ In Amazon Linux 2023, packages are managed natively via dnf (which replaces yum)
 
 Solution 1: Install using the default Package Manager (Recommended)You can install Ansible natively using dnf without needing any extra repositories:
 ==========
+Install Ansible:You can install either the complete standard package or the minimalist core framework:
+
+Full Package (Includes community collections and plugins):bash
+
+sudo dnf install ansible -y
+
+Use code with caution. Minimalist Package (Only the core engine and base modules): bash
+
 sudo dnf install ansible-core -y
 
 Solution 2: Install via Python pip (For the full Ansible package)If you need the comprehensive ansible community package (which includes additional collections and plugins) rather than just the minimal ansible-core:bash# Ensure pip is installed

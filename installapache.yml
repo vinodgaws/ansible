@@ -1,0 +1,20 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+  - name: install apache on managed servers
+    dnf:
+      name: httpd
+      state: present
+  
+  - name: start the apache service
+    service:
+      name: httpd
+      state: started
+      enabled: true
+  
+  - name: copy the file
+    copy:
+      src: index.html
+      dest: /var/www/html/
+...
